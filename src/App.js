@@ -16,7 +16,9 @@ class App extends Component {
 
     this.state = {
       user: null,
-      alerts: []
+      alerts: [],
+      showSingUp: false,
+      showSignIn: false,
     }
   }
 
@@ -27,7 +29,18 @@ class App extends Component {
   alert = (message, type) => {
     this.setState({ alerts: [...this.state.alerts, { message, type }] })
   }
-
+  showSignUp = (e) =>{
+    e.preventDefault()
+    this.setState({
+      showSingUp: true,
+      showSignIn: false,})
+  }
+  showSignIn = (e) =>{
+    e.preventDefault()
+    this.setState({
+      showSingUp: false,
+      showSignIn: true,})
+  }
   render () {
     const { alerts, user } = this.state
 
@@ -51,7 +64,14 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
         </main>
+        <div>
+         <input type="submit" value="Sign Up" onClick={this.showSignUp} />
+         <input type="submit" value="Sing In" onClick={this.showSignIn} />
+          { this.state.showSingUp ? <SignUp alert={this.alert} setUser={this.setUser} /> : null }
+          { this.state.showSignIn ? <SignIn alert={this.alert} setUser={this.setUser} /> : null }
+        </div>
       </React.Fragment>
+     
     )
   }
 }

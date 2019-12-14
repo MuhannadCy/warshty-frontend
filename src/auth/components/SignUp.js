@@ -10,6 +10,8 @@ class SignUp extends Component {
 
     this.state = {
       email: '',
+      fullName: '',
+      phoneNumber: '',
       password: '',
       passwordConfirmation: ''
     }
@@ -31,13 +33,13 @@ class SignUp extends Component {
       .then(() => history.push('/'))
       .catch(error => {
         console.error(error)
-        this.setState({ email: '', password: '', passwordConfirmation: '' })
+        this.setState({ email: '', fullName: '', phoneNumber: '', password: '', passwordConfirmation: '' })
         alert(messages.signUpFailure, 'danger')
       })
   }
 
   render () {
-    const { email, password, passwordConfirmation } = this.state
+    const { email, fullName, phoneNumber, password, passwordConfirmation } = this.state
 
     return (
       <form className='auth-form' onSubmit={this.onSignUp}>
@@ -50,6 +52,24 @@ class SignUp extends Component {
           value={email}
           type="email"
           placeholder="Email"
+          onChange={this.handleChange}
+        />
+        <label htmlFor="email">Full Name</label>
+        <input
+          required
+          name="fullName"
+          value={fullName}
+          type="text"
+          placeholder="Full Name"
+          onChange={this.handleChange}
+        />
+        <label htmlFor="phoneNumber">Phone Number</label>
+        <input
+          required
+          name="phoneNumber"
+          value={phoneNumber}
+          type="text"
+          placeholder="i.e: +966551231234 or 0551231234"
           onChange={this.handleChange}
         />
         <label htmlFor="password">Password</label>

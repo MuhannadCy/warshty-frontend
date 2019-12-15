@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom'
+import { addCustomer } from '../api'
+import messages from "../messages";
 
 
 
@@ -10,7 +12,8 @@ class AddCustomer extends Component{
             customerName: '',
             phoneNumber: '',
             email: '',
-            numberOfCars: 0
+            numberOfCars: 0,
+            customersList: []
         }
     }
     handleChange = event => this.setState({
@@ -21,12 +24,19 @@ class AddCustomer extends Component{
     
     const {alert, history, user} = this.props
     //API Create Methods Here
-
+    addCustomer(this.state, user)
+    .then(()=>alert(messages.addCustomerSuccess))
+    .then(()=> history.push('/'))
+    .catch(error => {
+        console.log(error)
+        this.state({customerName: '',phoneNumber: '', email: '',})
+        alert('didn\'t work')
+    })
     }
     render(){
         const {customerName,phoneNumber,email,numberOfCars} = this.state
         return(
-            <form className='auth-form' onSubmit={this.onChangePassword}>
+            <form className='auth-form' onSubmit={this.onAddCustomer}>
                 <h3>Add Customer</h3>
 
                 <label htmlFor="oldpw">Customer Name</label>

@@ -57,3 +57,28 @@ export const changePassword = (passwords, user) => {
     }
   })
 }
+export const addCustomer = (customer, user) => {
+  return axios({
+    url: apiUrl + '/api/customer',
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    },
+    data: {
+      customer:{
+        customerName: customer.customerName,
+        phoneNumber: customer.phoneNumber,
+        email: customer.email,
+      }
+    }
+  })
+}
+export const showAllCustomers = (user) => {
+  return axios({
+    url: apiUrl + '/api/customer',
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
+  })
+}

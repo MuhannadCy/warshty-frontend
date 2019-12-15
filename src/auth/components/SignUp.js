@@ -69,7 +69,7 @@ class SignUp extends Component {
           name="phoneNumber"
           value={phoneNumber}
           type="text"
-          placeholder="i.e: +966551231234 or 0551231234"
+          placeholder="i.g: +966551231234, 0551231234"
           onChange={this.handleChange}
         />
         <label htmlFor="password">Password</label>

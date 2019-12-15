@@ -10,6 +10,7 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AddCustomer from './auth/components/AddCustomer'
 import AlertDismissible from './auth/components/AlertDismissible'
+import Customers from './auth/components/Customers'
 
 class App extends Component {
   constructor () {
@@ -20,11 +21,15 @@ class App extends Component {
       alerts: [],
       showSingUp: false,
       showSignIn: false,
+      customersList: []
     }
   }
 
   setUser = user => this.setState({ user })
 
+  setCustomerList = customers =>{
+    this.setState({customersList: customers})
+  }
   clearUser = () => this.setState({ user: null })
 
   alert = (message, type) => {
@@ -69,10 +74,13 @@ class App extends Component {
           )} />
         </main>
         <div>
-         <input type="submit" value="Sign Up" onClick={this.showSignUp} />
+        <AuthenticatedRoute user={user} path='/customers' render={() => (
+            <Customers user={user} customers ={this.state.customersList} setCustomerList = {this.setCustomerList}/>
+          )} />
+         {/* <input type="submit" value="Sign Up" onClick={this.showSignUp} />
          <input type="submit" value="Sing In" onClick={this.showSignIn} />
           { this.state.showSingUp ? <SignUp alert={this.alert} setUser={this.setUser} /> : null }
-          { this.state.showSignIn ? <SignIn alert={this.alert} setUser={this.setUser} /> : null }
+          { this.state.showSignIn ? <SignIn alert={this.alert} setUser={this.setUser} /> : null } */}
         </div>
       </React.Fragment>
      

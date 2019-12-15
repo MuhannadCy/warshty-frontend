@@ -8,6 +8,7 @@ import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
+import AddCustomer from './auth/components/AddCustomer'
 import AlertDismissible from './auth/components/AlertDismissible'
 
 class App extends Component {
@@ -62,6 +63,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/add-customer' render={() => (
+            <AddCustomer alert={this.alert} user={user} />
           )} />
         </main>
         <div>

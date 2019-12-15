@@ -74,7 +74,7 @@ class App extends Component {
           )} />
         </main>
         <div>
-        <AuthenticatedRoute user={user} path='/customers' render={() => (
+        <AuthenticatedRoute user={user} path='/' render={() => (
             <Customers user={user} customers ={this.state.customersList} setCustomerList = {this.setCustomerList}/>
           )} />
          {/* <input type="submit" value="Sign Up" onClick={this.showSignUp} />

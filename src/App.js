@@ -70,7 +70,7 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/add-customer' render={() => (
-            <AddCustomer alert={this.alert} user={user} />
+            <AddCustomer alert={this.alert} user={user} customers ={this.state.customersList} setCustomerList = {this.setCustomerList}/>
           )} />
         </main>
         <div>

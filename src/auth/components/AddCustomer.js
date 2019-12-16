@@ -21,17 +21,20 @@ class AddCustomer extends Component{
     })
     onAddCustomer = event =>{
         event.preventDefault()
-    
-    const {alert, history, user} = this.props
-    //API Create Methods Here
-    addCustomer(this.state, user)
-    .then(()=>alert(messages.addCustomerSuccess))
-    .then(()=> history.push('/'))
-    .catch(error => {
-        console.log(error)
-        this.state({customerName: '',phoneNumber: '', email: '',})
-        alert('didn\'t work')
-    })
+        const {alert, history, user} = this.props
+        //API Create Methods Here
+        addCustomer(this.state, user)
+        .then(()=>{
+            alert(messages.addCustomerSuccess)
+            this.props.customers.push(this.state)
+            this.props.setCustomerList(this.props.customers);
+        })
+        .then(()=> history.push('/'))
+        .catch(error => {
+            console.log(error)
+            this.setState({customerName: '',phoneNumber: '', email: '',})
+            alert('didn\'t work')
+        })
     }
     render(){
         const {customerName,phoneNumber,email,numberOfCars} = this.state

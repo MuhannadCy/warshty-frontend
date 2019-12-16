@@ -1,6 +1,9 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
+
+//////------ *** USER *** ------//////
+
 export const signUp = credentials => {
   return axios({
     method: 'POST',
@@ -57,6 +60,51 @@ export const changePassword = (passwords, user) => {
     }
   })
 }
+
+
+//////------ *** CAR *** ------//////
+
+export const onAddCar = (user, car) => {
+  return axios({
+    url: apiUrl + '/api/car',
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    },
+    data: {
+      car: {
+        VIN: car.VIN,
+        carPlate: car.carPlate,
+        color: car.color,
+        year: car.year,
+        model: car.model
+      }
+    }
+  })
+}
+// get all crs
+export const showAllCars = function () {
+  return axios.get(`${apiUrl}/api/car`);
+}
+
+
+// export const deleteCar = (id, user) => {
+//   return axios({
+//     url: apiUrl + `/api/car/$${id}`,
+//     method: 'DELETE',
+//     headers: {
+//       'Authorization': `Bearer ${user.token}`
+//     }
+//   })
+// }
+
+// Delete Car By ID
+export const deleteCarByID = function (id) {
+  return axios.delete(`${apiUrl}/api/car/${id}`);
+}
+
+//////------ *** CUSTOMER *** ------//////
+
 export const addCustomer = (customer, user) => {
   return axios({
     url: apiUrl + '/api/customer',
@@ -65,7 +113,7 @@ export const addCustomer = (customer, user) => {
       'Authorization': `Bearer ${user.token}`
     },
     data: {
-      customer:{
+      customer: {
         customerName: customer.customerName,
         phoneNumber: customer.phoneNumber,
         email: customer.email,
@@ -82,11 +130,11 @@ export const showAllCustomers = (user) => {
     }
   })
 }
-export const deleteCustomer = (id, user)=>{
+export const deleteCustomer = (id, user) => {
   return axios({
     url: apiUrl + `/api/customer/$${id}`,
     method: 'DELETE',
-    headers:{
+    headers: {
       'Authorization': `Bearer ${user.token}`
     }
   })

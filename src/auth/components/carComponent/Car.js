@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 
-export class deleteAllCars extends Component {
+export class Car extends Component {
+
+
     render() {
         return (
             <div className="">
@@ -11,5 +13,5 @@ export class deleteAllCars extends Component {
     }
 }
 
-const deleteAllCars = withRouter(deleteAllCars);
-export default deleteAllCars;
+const Car = withRouter(Car);
+export default Car;

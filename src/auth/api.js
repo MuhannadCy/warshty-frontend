@@ -1,6 +1,9 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
+
+//////------ *** USER *** ------//////
+
 export const signUp = credentials => {
   return axios({
     method: 'POST',

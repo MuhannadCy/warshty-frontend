@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom'
-import { addCustomer, showAllCustomers, deleteCustomer } from '../api'
+import { addCustomer, showAllCustomers, deleteCustomerByID } from '../api'
 import messages from "../messages";
 import ShowCustomer from "./ShowCustomer";
 class Customers extends Component{
@@ -14,12 +14,12 @@ class Customers extends Component{
         })
     }
     deleteCustomer = (id) => {
-        deleteCustomer(id, this.props.user)
-          .then((response) => {
+      console.log(id)
+        deleteCustomerByID(id, this.props.user)
+          .then((res) => {
             const newCustomerList = this.props.customers.filter((customer) => {
               return customer._id !== id;
             });
-    
             this.props.setCustomerList(newCustomerList);
           })
           .catch((error) => {

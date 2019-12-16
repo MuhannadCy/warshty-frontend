@@ -59,6 +59,7 @@ export const changePassword = (passwords, user) => {
 }
 
 
+//////------ *** CAR *** ------//////
 
 export const onAddCar = (user, car) => {
   return axios({
@@ -78,24 +79,29 @@ export const onAddCar = (user, car) => {
     }
   })
 }
-export const showAllCar = (user) => {
-  return axios({
-    url: apiUrl + '/api/car',
-    method: 'Get',
-    headers: {
-      'Authorization': `Bearer ${user.token}`
-    }
-  })
+// get all crs
+export const showAllCars = function () {
+  return axios.get(`${apiUrl}/api/car`);
 }
-export const deleteCar = (id, user) => {
-  return axios({
-    url: apiUrl + `/api/car/$${id}`,
-    method: 'DELETE',
-    headers: {
-      'Authorization': `Bearer ${user.token}`
-    }
-  })
+
+
+// export const deleteCar = (id, user) => {
+//   return axios({
+//     url: apiUrl + `/api/car/$${id}`,
+//     method: 'DELETE',
+//     headers: {
+//       'Authorization': `Bearer ${user.token}`
+//     }
+//   })
+// }
+
+// Delete Car By ID
+export const deleteCarByID = function (id) {
+  return axios.delete(`${apiUrl}/api/car/${id}`);
 }
+
+//////------ *** CUSTOMER *** ------//////
+
 export const addCustomer = (customer, user) => {
   return axios({
     url: apiUrl + '/api/customer',

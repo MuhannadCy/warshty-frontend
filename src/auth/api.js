@@ -57,3 +57,14 @@ export const changePassword = (passwords, user) => {
     }
   })
 }
+
+
+
+
+export const onAddCar = (user, cusomer) => {
+  return axios({
+    url: apiUrl + '/car',
+    method: 'POST',
+    'Authorization': `Bearer ${user.token}`
+  })
+}

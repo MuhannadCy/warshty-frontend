@@ -88,11 +88,11 @@ class AddCar extends Component {
                     placeholder="type of car"
                     onChange={this.handleChange}
                 />
-                <button type="submit">Add Car To Customer ${CustomElementRegistry.name}</button>
+                {/* <button type="submit">Add Car To Customer ${CustomElementRegistry.name}</button> */}
+                <button type="submit">Add Car To Customer</button>
             </form>
         )
     }
 }
 
-const AddCar = withRouter(AddCar);
-export default AddCar;
+export default withRouter(AddCar);

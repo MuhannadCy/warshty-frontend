@@ -82,11 +82,11 @@ export const showAllCustomers = (user) => {
     }
   })
 }
-export const deleteCustomer = (id, user)=>{
+export const deleteCustomerByID = (id, user)=>{
   return axios({
-    url: apiUrl + `/api/customer/$${id}`,
+    url: apiUrl + `/api/customer/${id}`,
     method: 'DELETE',
-    headers:{
+    headers: {
       'Authorization': `Bearer ${user.token}`
     }
   })

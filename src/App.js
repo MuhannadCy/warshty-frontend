@@ -11,9 +11,10 @@ import ChangePassword from './auth/components/ChangePassword'
 import AddCustomer from './auth/components/AddCustomer'
 import AlertDismissible from './auth/components/AlertDismissible'
 import Customers from './auth/components/Customers'
+import Cars from './auth/components/carComponent/Cars'
 
 class App extends Component {
-  constructor () {
+  constructor() {
     super()
 
     this.state = {
@@ -21,33 +22,36 @@ class App extends Component {
       alerts: [],
       showSingUp: false,
       showSignIn: false,
-      customersList: []
+      customersList: [],
+      carsList: []
     }
   }
 
   setUser = user => this.setState({ user })
 
-  setCustomerList = customers =>{
-    this.setState({customersList: customers})
+  setCustomerList = customers => {
+    this.setState({ customersList: customers })
   }
   clearUser = () => this.setState({ user: null })
 
   alert = (message, type) => {
     this.setState({ alerts: [...this.state.alerts, { message, type }] })
   }
-  showSignUp = (e) =>{
+  showSignUp = (e) => {
     e.preventDefault()
     this.setState({
       showSingUp: true,
-      showSignIn: false,})
+      showSignIn: false,
+    })
   }
-  showSignIn = (e) =>{
+  showSignIn = (e) => {
     e.preventDefault()
     this.setState({
       showSingUp: false,
-      showSignIn: true,})
+      showSignIn: true,
+    })
   }
-  render () {
+  render() {
     const { alerts, user } = this.state
 
     return (
@@ -70,20 +74,21 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/add-customer' render={() => (
-            <AddCustomer alert={this.alert} user={user} customers ={this.state.customersList} setCustomerList = {this.setCustomerList}/>
+            <AddCustomer alert={this.alert} user={user} customers={this.state.customersList} setCustomerList={this.setCustomerList} />
           )} />
         </main>
         <div>
-        <AuthenticatedRoute user={user} path='/' render={() => (
-            <Customers user={user} customers ={this.state.customersList} setCustomerList = {this.setCustomerList}/>
+          <AuthenticatedRoute user={user} path='/' render={() => (
+            <Customers user={user} customers={this.state.customersList} setCustomerList={this.setCustomerList} /> ,
+            <Cars cars={this.state.carsList} setCarList={this.setCarList} />
           )} />
-         {/* <input type="submit" value="Sign Up" onClick={this.showSignUp} />
+          {/* <input type="submit" value="Sign Up" onClick={this.showSignUp} />
          <input type="submit" value="Sing In" onClick={this.showSignIn} />
           { this.state.showSingUp ? <SignUp alert={this.alert} setUser={this.setUser} /> : null }
           { this.state.showSignIn ? <SignIn alert={this.alert} setUser={this.setUser} /> : null } */}
         </div>
       </React.Fragment>
-     
+
     )
   }
 }

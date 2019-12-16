@@ -12,6 +12,7 @@ import AddCustomer from './auth/components/AddCustomer'
 import AlertDismissible from './auth/components/AlertDismissible'
 import Customers from './auth/components/Customers'
 import Cars from './auth/components/carComponent/Cars'
+import AddCar from './auth/components/carComponent/AddCar'
 
 class App extends Component {
   constructor() {
@@ -29,6 +30,9 @@ class App extends Component {
 
   setUser = user => this.setState({ user })
 
+  setCarList = cars => {
+    this.setState({ carsList: cars })
+  }
   setCustomerList = customers => {
     this.setState({ customersList: customers })
   }
@@ -76,11 +80,16 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/add-customer' render={() => (
             <AddCustomer alert={this.alert} user={user} customers={this.state.customersList} setCustomerList={this.setCustomerList} />
           )} />
+          <AuthenticatedRoute user={user} path='/add-car' render={() => (
+            <AddCar alert={this.alert} user={user} cars={this.state.carsList} setCarList={this.setCarList} />
+          )} />
         </main>
         <div>
           <AuthenticatedRoute user={user} path='/' render={() => (
-            <Customers user={user} customers={this.state.customersList} setCustomerList={this.setCustomerList} /> ,
-            <Cars cars={this.state.carsList} setCarList={this.setCarList} />
+            <React.Fragment>
+            <Customers user={user} customers={this.state.customersList} setCustomerList={this.setCustomerList} setCarList={this.setCarList} cars={this.state.carsList}/> 
+            <Cars user={user} cars={this.state.carsList} setCarList={this.setCarList} />
+            </React.Fragment>
           )} />
           {/* <input type="submit" value="Sign Up" onClick={this.showSignUp} />
          <input type="submit" value="Sing In" onClick={this.showSignIn} />

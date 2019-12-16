@@ -88,9 +88,19 @@ export const showCars = (user) => {
   return axios({
     url: apiUrl + '/api/car',
     method: 'GET',
-    // headers: {
-    //   'Authorization': `Bearer ${user.token}`
-    // }
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
+  })
+}
+//Show Cars By Customer
+export const showCustomerCars = (user, id) => {
+  return axios({
+    url: apiUrl + `/api/car/${id}`,
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
   })
 }
 

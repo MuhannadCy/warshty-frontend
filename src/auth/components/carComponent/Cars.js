@@ -16,7 +16,7 @@ class Cars extends Component {
     }
     deleteCar = (id) => {
         console.log(id)
-        deleteCarByID(id, this.props.car)
+        deleteCarByID(id, this.props.user)
             .then((res) => {
                 const newCarList = this.props.cars.filter((car) => {
                     return car._id !== id;
@@ -31,13 +31,12 @@ class Cars extends Component {
         let allCars = <h2>No Cars</h2>
         if (this.props.cars.length > 0) {
             allCars = this.props.cars.map((car, index) => {
-                return <ShowCar name={car.VIN} key={index} deleteCustomer={this.deleteCar} id={car._id} />
+                return <ShowCar name={car.VIN} key={index} deleteCar={this.deleteCar} id={car._id} />
             })
         }
         return (
             <div>
                 {allCars}
-                <Link to="/add-car">Add Car</Link>
             </div>
         )
     }

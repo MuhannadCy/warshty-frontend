@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { addCustomer, showAllCustomers, deleteCustomerByID } from '../api'
 import messages from "../messages";
 import ShowCustomer from "./ShowCustomer";
@@ -33,7 +33,12 @@ class Customers extends Component{
                 return <ShowCustomer name={customer.customerName} key={index} deleteCustomer={this.deleteCustomer} id={customer._id}/>
             })
         }
-        return allCustomers
+        return( 
+          <div>
+            {allCustomers}
+            <Link to="/add-customer">Add Customer</Link>
+          </div>
+          )
     }
 }
 

@@ -34,7 +34,7 @@ export default class LandingPage extends Component {
                 <div class = "sign">
                     <div class= "sign-in">
                         
-                        {this.state.showSignIn &&  <SignIn />}
+                        {this.state.showSignIn &&  <SignIn alert={this.props.alert} setUser={this.props.setUser}/>}
                     </div>
                     <div class = "logo">
                         <button class="sign-button" onClick = {this.toggleSignInDiv}>Sign In</button>
@@ -42,7 +42,7 @@ export default class LandingPage extends Component {
                         <button class="sign-button" onClick = {this.toggleSignUpDiv}>Sign Up</button>
                     </div>
                     <div class= "sign-up">
-                        {this.state.showSignUp && <SignUp />}
+                        {this.state.showSignUp && <SignUp alert={this.props.alert} setUser={this.props.setUser} />}
                     </div>
                 </div>
             </div>

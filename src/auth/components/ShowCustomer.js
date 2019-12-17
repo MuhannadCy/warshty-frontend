@@ -28,7 +28,10 @@ class ShowCustomer extends Component {
     })
   }
   displayAddCarLink1(id, user){
-    this.setState({showAddCustomerForm: true})
+    this.setState({showAddCustomerForm: !this.state.showAddCustomerForm}, ()=> {
+      this.setState({showAddCustomerForm: !this.state.showAddCustomerForm})
+    })
+    console.log(this.state.showAddCustomerForm)
   }
 
   render() {

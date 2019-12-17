@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import {addCar} from '../../api'
 
 
@@ -27,6 +27,7 @@ class AddCar extends Component {
         .then(()=>{
             this.props.cars.push(this.state)
             this.props.setCarList(this.props.cars);
+            //return (<Redirect to = {'/'}/>)
         })
         .then(()=> history.push('/'))
         .catch(error => {

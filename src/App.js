@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.scss";
-import { Route } from "react-router-dom";
-
+import { Route, Switch } from "react-router-dom";
 import AuthenticatedRoute from "./auth/components/AuthenticatedRoute";
 import Header from "./header/Header";
 import SignUp from "./auth/components/SignUp";
@@ -60,6 +59,7 @@ class App extends Component {
     const { alerts, user } = this.state;
     return (
       <React.Fragment>
+        
         <Header user={user} />
         {alerts.map((alert, index) => (
           <AlertDismissible
@@ -69,6 +69,7 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Switch>
           <Route
             path="/sign-up"
             render={() => <SignUp alert={this.alert} setUser={this.setUser} />}
@@ -123,6 +124,7 @@ class App extends Component {
               />
             )}
           />
+          </Switch>
         </main>
         <div>
           <AuthenticatedRoute
@@ -152,11 +154,7 @@ class App extends Component {
                 </div>
               </div>
             )}
-          />
-          {/* <input type="submit" value="Sign Up" onClick={this.showSignUp} />
-         <input type="submit" value="Sing In" onClick={this.showSignIn} />
-          { this.state.showSingUp ? <SignUp alert={this.alert} setUser={this.setUser} /> : null }
-          { this.state.showSignIn ? <SignIn alert={this.alert} setUser={this.setUser} /> : null } */}
+          />}
         </div>
       </React.Fragment>
     );

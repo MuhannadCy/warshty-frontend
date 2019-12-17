@@ -13,6 +13,7 @@ import AlertDismissible from './auth/components/AlertDismissible'
 import Customers from './auth/components/Customers'
 import Cars from './auth/components/carComponent/Cars'
 import AddCar from './auth/components/carComponent/AddCar'
+import LandingPage from './LandingPage'
 
 class App extends Component {
   constructor() {
@@ -68,6 +69,10 @@ class App extends Component {
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
+          <Route path="/landingpage" render={() => (
+              <LandingPage alert={this.alert} setUser={this.setUser} />
+            )}
+          />
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />

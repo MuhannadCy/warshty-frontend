@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from 'react-router-dom'
 import {showCustomerCars} from '../api'
-import AddCar from "./carComponent/AddCar";
-
+import AddCar from "./carComponent/AddCar"; 
 
 class ShowCustomer extends Component {
   constructor(){

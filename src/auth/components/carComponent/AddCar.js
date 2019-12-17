@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom'
+import {addCar} from '../../api'
 
 
 
@@ -22,7 +23,17 @@ class AddCar extends Component {
 
         const { alert, history, user } = this.props
         //API Create Methods Here
-
+        addCar(user, this.state, this.props.location.state.id)
+        .then(()=>{
+            this.props.cars.push(this.state)
+            this.props.setCarList(this.props.cars);
+        })
+        .then(()=> history.push('/'))
+        .catch(error => {
+            console.log(error)
+            this.setState({VIN: '',carPlate: '',color: '',year: '', model: ''})
+            alert('didn\'t work')
+        })
     }
     render() {
         const { VIN, carPlate, color, year, model } = this.state

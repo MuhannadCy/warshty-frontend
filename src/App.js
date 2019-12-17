@@ -2,56 +2,61 @@ import React, { Component } from "react";
 import "./App.scss";
 import { Route } from "react-router-dom";
 
-import AuthenticatedRoute from "./auth/components/AuthenticatedRoute";
-import Header from "./header/Header";
-import SignUp from "./auth/components/SignUp";
-import SignIn from "./auth/components/SignIn";
-import SignOut from "./auth/components/SignOut";
-import ChangePassword from "./auth/components/ChangePassword";
-import AddCustomer from "./auth/components/AddCustomer";
-import AlertDismissible from "./auth/components/AlertDismissible";
-import Customers from "./auth/components/Customers";
-import LandingPage from "./LandingPage";
+import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
+import Header from './header/Header'
+import SignUp from './auth/components/SignUp'
+import SignIn from './auth/components/SignIn'
+import SignOut from './auth/components/SignOut'
+import ChangePassword from './auth/components/ChangePassword'
+import AddCustomer from './auth/components/AddCustomer'
+import AlertDismissible from './auth/components/AlertDismissible'
+import Customers from './auth/components/Customers'
+import Cars from './auth/components/carComponent/Cars'
+import AddCar from './auth/components/carComponent/AddCar'
 
 class App extends Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
       user: null,
       alerts: [],
       showSingUp: false,
       showSignIn: false,
-      customersList: []
-    };
+      customersList: [],
+      carsList: []
+    }
   }
 
   setUser = user => this.setState({ user });
 
+  setCarList = cars => {
+    this.setState({ carsList: cars })
+  }
   setCustomerList = customers => {
-    this.setState({ customersList: customers });
-  };
-  clearUser = () => this.setState({ user: null });
+    this.setState({ customersList: customers })
+  }
+  clearUser = () => this.setState({ user: null })
 
   alert = (message, type) => {
-    this.setState({ alerts: [...this.state.alerts, { message, type }] });
-  };
-  showSignUp = e => {
-    e.preventDefault();
+    this.setState({ alerts: [...this.state.alerts, { message, type }] })
+  }
+  showSignUp = (e) => {
+    e.preventDefault()
     this.setState({
       showSingUp: true,
-      showSignIn: false
-    });
-  };
-  showSignIn = e => {
-    e.preventDefault();
+      showSignIn: false,
+    })
+  }
+  showSignIn = (e) => {
+    e.preventDefault()
     this.setState({
       showSingUp: false,
-      showSignIn: true
-    });
-  };
+      showSignIn: true,
+    })
+  }
   render() {
-    const { alerts, user } = this.state;
+    const { alerts, user } = this.state
 
     return (
       <React.Fragment>
@@ -125,7 +130,8 @@ class App extends Component {
           { this.state.showSignIn ? <SignIn alert={this.alert} setUser={this.setUser} /> : null } */}
         </div>
       </React.Fragment>
-    );
+
+    )
   }
 }
 

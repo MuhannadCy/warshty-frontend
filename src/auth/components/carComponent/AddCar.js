@@ -24,19 +24,6 @@ class AddCar extends Component {
         //API Create Methods Here
 
     }
-    deleteCar = (id) => {
-        deleteCarByID(id)
-            .then((res) => {
-                const newCarList = this.car.filtter((car) => {
-                    return car._id !== id;
-                });
-
-                this.props.setArticles(newCarList);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
     render() {
         const { VIN, carPlate, color, year, model } = this.state
         return (
@@ -88,11 +75,11 @@ class AddCar extends Component {
                     placeholder="type of car"
                     onChange={this.handleChange}
                 />
-                <button type="submit">Add Car To Customer ${CustomElementRegistry.name}</button>
+                {/* <button type="submit">Add Car To Customer ${CustomElementRegistry.name}</button> */}
+                <button type="submit">Add Car To Customer</button>
             </form>
         )
     }
 }
 
-const AddCar = withRouter(AddCar);
-export default AddCar;
+export default withRouter(AddCar);

@@ -64,9 +64,9 @@ export const changePassword = (passwords, user) => {
 
 //////------ *** CAR *** ------//////
 
-export const addCar = (user, car) => {
+export const addCar = (user, car, id) => {
   return axios({
-    url: apiUrl + '/api/car',
+    url: apiUrl + `/api/car/${id}`,
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${user.token}`
@@ -74,10 +74,11 @@ export const addCar = (user, car) => {
     data: {
       car: {
         VIN: car.VIN,
-        carPlate: car.carPlate,
+        carPlat: car.carPlate,
         color: car.color,
         year: car.year,
-        model: car.model
+        model: car.model,
+
       }
     }
   })

@@ -54,6 +54,32 @@ h3 {
 .logo-small{
   margin-top: 7%;
 }
-.customer-container {
-  background-color: red;
+.Pool {
+  text-align: center;
+}
+.main-container{
+  background-image: url(https://images.unsplash.com/photo-1550653515-ff15585d709c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+  background-size: contain;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  // width: 90%;
+}
+.customers-container {
+  color: black;
+  background-color: rgba($color: #fff, $alpha: 0.7);
+  width: 40%;
+  height: 75vh;
+  margin: 2rem;
+  border-radius: 10px;
+}
+.cars-container {
+  color: black;
+  background-color: rgba($color: #fff, $alpha: 0.7);
+  width: 40%;
+  height: 75vh;
+  margin: 2rem;
+  border-radius: 10px;
 }

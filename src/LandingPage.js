@@ -22,18 +22,18 @@ export default class LandingPage extends Component {
 
     toggleSignInDiv = () =>{
         const{showSignIn} =this.state;
-        this.setState( {showSignIn: !showSignIn})
+        this.setState( {showSignIn: !showSignIn, showSignUp: false})
     }
     toggleSignUpDiv = () =>{
         const{showSignUp} =this.state;
-        this.setState( {showSignUp: !showSignUp})
+        this.setState( {showSignUp: !showSignUp, showSignIn: false})
     }
     render() {
         return (
             <div class = "container">
                 <div class = "sign">
                     <div class= "sign-in">
-                        {/* <SignIn /> */}
+                        
                         {this.state.showSignIn &&  <SignIn />}
                     </div>
                     <div class = "logo">

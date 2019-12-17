@@ -1,6 +1,6 @@
 body{
     margin: 0 auto;
-    color: ivory;
+    color:  #f88300;
     background-color: #383838;
 }
 .container { 
@@ -17,7 +17,7 @@ body{
     text-align: center;
     margin: 0 auto;
     height: 80vh;
-    width: 60vw;
+    width: 80vw;
     // width:100%;
 }
 .logo{
@@ -45,3 +45,10 @@ a {
     margin-left: 0px;
     margin-right: 0;
 }
+.btn {
+    background-color: #f88300;
+    display: none;
+}
+// .btn:hover{
+//     display: flex;
+// }

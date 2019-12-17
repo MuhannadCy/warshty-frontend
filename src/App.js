@@ -13,6 +13,7 @@ import AlertDismissible from './auth/components/AlertDismissible'
 import Customers from './auth/components/Customers'
 import Cars from './auth/components/carComponent/Cars'
 import AddCar from './auth/components/carComponent/AddCar'
+import LandingPage from './LandingPage'
 
 class App extends Component {
   constructor() {

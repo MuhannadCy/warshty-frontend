@@ -20,7 +20,7 @@ class App extends Component {
     super();
 
     this.state = {
-      user:null,
+      user: null,
       alerts: [],
       showSingUp: false,
       showSignIn: false,

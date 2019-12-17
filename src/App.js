@@ -92,8 +92,14 @@ class App extends Component {
         <div>
           <AuthenticatedRoute user={user} path='/' render={() => (
             <React.Fragment>
-            <Customers user={user} customers={this.state.customersList} setCustomerList={this.setCustomerList} setCarList={this.setCarList} cars={this.state.carsList}/> 
-            <Cars user={user} cars={this.state.carsList} setCarList={this.setCarList} />
+              <div class="main-container">
+                <div class="customer-container">
+                  <Customers user={user} customers={this.state.customersList} setCustomerList={this.setCustomerList} setCarList={this.setCarList} cars={this.state.carsList}/> 
+                </div>
+                <div class="cars">
+                  <Cars user={user} cars={this.state.carsList} setCarList={this.setCarList} />
+                </div>
+            </div>
             </React.Fragment>
           )} />
           {/* <input type="submit" value="Sign Up" onClick={this.showSignUp} />

@@ -13,6 +13,7 @@ import Customers from "./auth/components/Customers";
 import Cars from "./auth/components/carComponent/Cars";
 import AddCar from "./auth/components/carComponent/AddCar";
 import LandingPage from "./LandingPage";
+import UpdateCustomer from "./auth/components/UpdateCustomer";
 
 class App extends Component {
   constructor() {
@@ -105,6 +106,18 @@ class App extends Component {
             path="/add-customer"
             render={() => (
               <AddCustomer
+                alert={this.alert}
+                user={user}
+                customers={this.state.customersList}
+                setCustomerList={this.setCustomerList}
+              />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path="/update-customer"
+            render={() => (
+              <UpdateCustomer
                 alert={this.alert}
                 user={user}
                 customers={this.state.customersList}

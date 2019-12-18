@@ -191,7 +191,7 @@ class App extends Component {
                         setWorkOrderList={this.setWorkOrderList}
                       />
                     </div>
-                    <div>
+                    <div className="work-container">
                     <WorkOrders
                         user={user}
                         workOrders={this.state.workOrdersList}

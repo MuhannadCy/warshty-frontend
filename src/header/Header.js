@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import warshaty2 from '../Assets/Images/warshaty2.png'
+import warshaty3 from '../Assets/Images/warshaty3.png'
 
 import './Header.scss'
 
@@ -28,7 +28,7 @@ const alwaysOptions = (
 const Header = ({ user }) => (
   <header className="main-header">
     {/* <h1>Warshty</h1> */}
-    <img src={warshaty2} width="200" height="200" class="logo-small"/>
+    <img src={warshaty3} width="200" height="70" class="logo-small"/>
     <nav>
       { user && <span>Welcome, {user.fullName}</span>}
       { user ? authenticatedOptions : unauthenticatedOptions }

@@ -35,7 +35,42 @@ $charcoal: #ccc;
   justify-content: center;
   margin: 15% auto 0;
   max-width: 600px;
-
+}
+.auth-form1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 6%;
+  max-width: 600px;
+}
+.auth-form-add-car {
+  position: absolute;
+  display: flex;
+  background-color:rgba(255, 255, 255, 0.9);
+  right: 25%;
+  top:0.5%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10% auto 0;
+  max-width: 600px;
+  width: 60vw;
+  height: 90%;
+  
+  border: black solid 2px;
+  -webkit-box-shadow: 13px 4px 28px -9px rgba(0,0,0,0.75);
+-moz-box-shadow: 13px 4px 28px -9px rgba(0,0,0,0.75);
+box-shadow: 13px 4px 28px -9px rgba(0,0,0,0.75);
+}
+// .add-car {
+//   position: absolute;
+//   box-shadow: black;
+//   background-color: cornsilk;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   margin: 15% auto 0;
+//   max-width: 600px;
+// }
   h3,
   input {
     margin-bottom: 5%;
@@ -46,13 +81,17 @@ $charcoal: #ccc;
     max-width: 200px;
     background-color:  #f88300;
     color: ivory;
+    border: none;
   }
-}
+
 h3 {
   text-align: center;
 }
+h6{
+  font-size: 14px;
+}
 .logo-small{
-  margin-top: 7%;
+  margin-top: 1%;
 }
 .Pool {
   text-align: center;
@@ -63,25 +102,33 @@ h3 {
   display: flex;
   text-align: center;
   justify-content: center;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   
   // width: 90%;
 }
 .customers-container {
   color: #fff;
   background-color: rgba($color: #000, $alpha: 0.7);
-  width: 40%;
+  width: 47%;
   height: 75vh;
-  margin: 2rem;
+  margin: 1rem;
   border-radius: 10px;
 }
 .cars-container {
   color: #fff;
   background-color: rgba($color: #000, $alpha: 0.7);
-  width: 40%;
-  height: 75vh;
-  margin: 2rem;
+  width: 24%;
+  min-height: 75vh;
+  margin: 1rem;
   border-radius: 10px;
+}
+.work-container{
+  color: #fff;
+  background-color: rgba($color: #000, $alpha: 0.7);
+  width: 24%;
+  min-height: 75vh;
+  margin: 1rem;
+  border-radius: 10px; 
 }
 .car{
   display: flex;
@@ -89,8 +136,12 @@ h3 {
   justify-content: space-around;
 
 }
-.customer {
+.customer{
   display: flex;
   justify-content: space-between;
   padding: 5%;
+  border-bottom: 1px solid #fff;
+}
+.customer:active{
+  background-color: white;
 }

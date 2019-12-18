@@ -39,7 +39,8 @@ class AddWorkOrder extends Component {
     render() {
         const { mechanic, description, cost} = this.state
         return (
-            <form className='auth-form' onSubmit={this.onAddWorkOrder}>
+            <div className="auth-form-add-car">
+            <form className='auth-form1' onSubmit={this.onAddWorkOrder}>
                 <h3>Add Work Order</h3>
 
                 <label htmlFor="oldpw"> Mechanic </label>
@@ -71,6 +72,7 @@ class AddWorkOrder extends Component {
                 />
                 <button type="submit">Add Work Order To Car</button>
             </form>
+            </div>
         )
     }
 }

@@ -9,8 +9,11 @@ class ShowWorkOrder extends Component {
     render(){
         return (
             <div>
-                <h2>{this.props.mechanic}</h2>
-                <a href = "#" onClick={this.deleteWorkOrder}>Delete</a>
+                <h2>{this.props.mechanic}</h2><br />
+                <div className="work-orders">
+                    <h6>{this.props.cost}</h6>
+                     <a href = "#" onClick={this.deleteWorkOrder}>Delete</a>
+                </div>
             </div>
         )
     }

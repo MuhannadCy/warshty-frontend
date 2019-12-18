@@ -48,7 +48,7 @@ class ShowCustomer extends Component {
     </div>)
       return (
         <div className="customer" onClick={this.showCars}>
-          <h2 onClick={this.showCars}>{this.props.customerName}</h2>
+          <h3 onClick={this.showCars}>{this.props.customerName}</h3>
           <a href="#" onClick={this.deleteCustomer}>Delete</a>
           {displayAddCarLink}
           {this.state.showAddCustomerForm && <Redirect to={{

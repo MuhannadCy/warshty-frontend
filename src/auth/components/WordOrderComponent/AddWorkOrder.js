@@ -75,7 +75,7 @@ class AddWorkOrder extends Component {
                 />
                 <button type="submit">Add Work Order To Car</button>
             </form>
-            <button onClick = {()=>{this.cancleAdd()}}></button>
+            <button onClick = {()=>{this.cancleAdd()}}>Cancle</button>
             </div>
         )
     }

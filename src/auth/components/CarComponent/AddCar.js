@@ -95,7 +95,7 @@ class AddCar extends Component {
                 <button type="submit">Add Car To Customer</button>
                 
             </form>
-            <button onClick = {()=>{this.cancleAdd()}}></button>
+            <button onClick = {()=>{this.cancleAdd()}}>Cancle</button>
             </div>
         )
     }

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom'
-import { addCustomer } from '../api'
-import messages from "../messages";
+import { updateCustomer } from '../../api'
+import messages from "../../messages";
 
 
 
-class AddCustomer extends Component{
+class UpdateCustomer extends Component{
     constructor(){
         super()
         this.state = {
@@ -16,17 +16,29 @@ class AddCustomer extends Component{
             customersList: []
         }
     }
+    componentDidMount(){
+        this.setOldCustomer()
+    }
+    setOldCustomer(){
+        this.setState({
+            customerName: this.props.location.state.customerName,
+            phoneNumber: this.props.location.state.phoneNumber,
+            email: this.props.location.state.email,
+        })
+    }
     handleChange = event => this.setState({
         [event.target.name]: event.target.value
     })
-    onAddCustomer = event =>{
+    onUpdateCustomer = event =>{
         event.preventDefault()
         const {alert, history, user} = this.props
+        let updatedCustomer = this.state
+        let oldCustomerIndex
         //API Create Methods Here
-        addCustomer(this.state, user)
+        updateCustomer(this.state, user, this.props.location.state.id)
         .then(()=>{
-            alert(messages.addCustomerSuccess)
-            this.props.customers.push(this.state)
+            oldCustomerIndex = this.props.customers.findIndex(customer => customer._id == this.props.location.state.id) 
+            this.props.customers[oldCustomerIndex] = updatedCustomer
             this.props.setCustomerList(this.props.customers);
         })
         .then(()=> history.push('/'))
@@ -39,8 +51,8 @@ class AddCustomer extends Component{
     render(){
         const {customerName,phoneNumber,email,numberOfCars} = this.state
         return(
-            <form className='auth-form' onSubmit={this.onAddCustomer}>
-                <h3>Add Customer</h3>
+            <form className='auth-form' onSubmit={this.onUpdateCustomer}>
+                <h3>Update Customer</h3>
 
                 <label htmlFor="oldpw">Customer Name</label>
                 <input
@@ -74,4 +86,4 @@ class AddCustomer extends Component{
         )
     }
 }
-export default withRouter(AddCustomer)
+export default withRouter(UpdateCustomer)

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from 'react-router-dom'
-import {showCustomerCars} from '../api'
-import AddCar from "./carComponent/AddCar"; 
+import {showCustomerCars} from '../../api'
+import AddCar from "../CarComponent/AddCar"; 
 
 class ShowCustomer extends Component {
   constructor(){
@@ -42,7 +42,8 @@ class ShowCustomer extends Component {
     const user = this.props.user
     const id = this.props.id
     let displayAddCarLink = ''
-    if(this.state.showAddCustomer == true) displayAddCarLink = (<div><button onClick= {()=>{this.displayAddCarLink1(id, user)}}>Add Car</button>,
+    if(this.state.showAddCustomer == true) displayAddCarLink = (<div>
+    <button onClick= {()=>{this.displayAddCarLink1(id, user)}}>Add Car</button>,
     <button onClick= {()=>{this.displayUpdateCarLink()}}>Update Car</button>
     </div>)
       return (
@@ -56,7 +57,8 @@ class ShowCustomer extends Component {
               id: this.props.id,
               customerName: this.props.customerName, 
               email: this.props.email,
-              phoneNumber: this.props.phoneNumber
+              phoneNumber: this.props.phoneNumber,
+              
             } 
             }}
         />}

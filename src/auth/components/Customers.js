@@ -38,7 +38,7 @@ class Customers extends Component {
         let allCustomers = <h2>You Have No Customers</h2>
         if (this.props.customers.length > 0) {
             allCustomers = this.props.customers.map((customer, index) => {
-                return <ShowCustomer user={this.props.user} name={customer.customerName} key={index} deleteCustomer={this.deleteCustomer} id={customer._id} setCarList={this.props.setCarList}/>
+                return <ShowCustomer user={this.props.user} customerName={customer.customerName} email={customer.email} phoneNumber= {customer.phoneNumber}key={index} deleteCustomer={this.deleteCustomer} id={customer._id} setCarList={this.props.setCarList}/>
             })
         }
         return (

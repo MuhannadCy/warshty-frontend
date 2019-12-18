@@ -8,7 +8,8 @@ class ShowCustomer extends Component {
     super()
     this.state = {
       showAddCustomer: false,
-      showAddCustomerForm: false
+      showAddCustomerForm: false,
+      showUpdateCustomerForm: false
     }
   }
   deleteCustomer = (e) => {
@@ -27,22 +28,46 @@ class ShowCustomer extends Component {
     })
   }
   displayAddCarLink1(id, user){
-    this.setState({showAddCustomerForm: true})
+    this.setState({showAddCustomerForm: !this.state.showAddCustomerForm}, ()=> {
+      this.setState({showAddCustomerForm: !this.state.showAddCustomerForm})
+    })
   }
+  displayUpdateCarLink(){
+    this.setState({ showUpdateCustomerForm: !this.state.showUpdateCustomerForm}, ()=> {
+      this.setState({showUpdateCustomerForm: !this.state.showUpdateCustomerForm})
+  })
+}
 
   render() {
     const user = this.props.user
     const id = this.props.id
     let displayAddCarLink = ''
-    if(this.state.showAddCustomer == true) displayAddCarLink = <button onClick= {()=>{this.displayAddCarLink1(id, user)}}>Add Car</button>
+    if(this.state.showAddCustomer == true) displayAddCarLink = (<div><button onClick= {()=>{this.displayAddCarLink1(id, user)}}>Add Car</button>,
+    <button onClick= {()=>{this.displayUpdateCarLink()}}>Update Car</button>
+    </div>)
       return (
         <div className="customer" onClick={this.showCars}>
-          <h2 onClick={this.showCars}>{this.props.name}</h2>
+          <h2 onClick={this.showCars}>{this.props.customerName}</h2>
           <a href="#" onClick={this.deleteCustomer}>Delete</a>
           {displayAddCarLink}
           {this.state.showAddCustomerForm && <Redirect to={{
             pathname: '/add-car',
-            state: { id: this.props.id}
+            state: { 
+              id: this.props.id,
+              customerName: this.props.customerName, 
+              email: this.props.email,
+              phoneNumber: this.props.phoneNumber
+            } 
+            }}
+        />}
+        {this.state.showUpdateCustomerForm && <Redirect to={{
+            pathname: '/update-customer',
+            state: { 
+              id: this.props.id,
+              customerName: this.props.customerName, 
+              email: this.props.email,
+              phoneNumber: this.props.phoneNumber
+            } 
             }}
         />}
         </div>

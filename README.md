@@ -1,106 +1,76 @@
-# Full stack web application
+![logo](./src/Assets/Images/warshaty2.png)
 
-A standard style for README files
+# Repair Shop Management 
 
-Your README file is normally the first entry point to your code. It should tell people why they should use your module, how they can install it, and how they can use it. Standardizing how you write your README makes creating and maintaining your READMEs easier. Great documentation takes work!
 
-This repository contains:
+Our project serve the Repair shop to manage the customer they comes-in and  them to tracking their progress and status of the car also the main details of car needed.
 
-<!-- 1. [The specification](spec.md) for how a standard README should look.
-2. A link to a linter you can use to keep your README maintained ([work in progress](https://github.com/RichardLitt/standard-readme/issues/5)).
-3. A link to [a generator](https://github.com/RichardLitt/generator-standard-readme) you can use to create standard READMEs.
-4. [A badge](#badge) to point to this spec.
-5. [Examples of standard READMEs](example-readmes/) - such as this file you are reading.
-
-Standard Readme is designed for open source libraries. Although it’s [historically](#background) made for Node and npm projects, it also applies to libraries in other languages and package managers. -->
+* User represent the owner of the repair shop
+* Customer belong to one User wich
+The project has many useful outcomes when the project use by a huge number of repair shops with a large number of cases that help up to improve and avoid damage from happening 
 
 
 ## Table of Contents
 
 - [Background](#background)
-- [Install](#install)
-- [Usage](#usage)
-	- [Generator](#generator)
-- [Badge](#badge)
-- [Example Readmes](#example-readmes)
-- [Related Efforts](#related-efforts)
-- [Maintainers](#maintainers)
-- [Contributing](#contributing)
-- [License](#license)
+- [User Story](#user-story)
+- [Entity Relationship Diagram](#entity-relationship-diagram)
+- [Wireframe](#wireframe)
+- [Technology](#technology)
+- [Further Study](#further-study)
+- [Team Member](#team-member)
 
 ## Background
+Nowadays in case of car accident or get damage for any reason we immediately go to repair shop to fixed the damages with hard way to contact with the shop and for tracking your car progress, so this system will provide a number of servieces to the customer's shop and the repaire shop itself.
+The system will help the shop to orgnaize the all work order inside his shop to allow him to access to any case in a short time, and he can compare the income problem with the old one that allready fixed in the system stored.
 
-<!-- Standard Readme started with the issue originally posed by [@maxogden](https://github.com/maxogden) over at [feross/standard](https://github.com/feross/standard) in [this issue](https://github.com/feross/standard/issues/141), about whether or not a tool to standardize readmes would be useful. A lot of that discussion ended up in [zcei's standard-readme](https://github.com/zcei/standard-readme/issues/1) repository. While working on maintaining the [IPFS](https://github.com/ipfs) repositories, I needed a way to standardize Readmes across that organization. This specification started as a result of that. -->
 
-> Your documentation is complete when someone can use your module without ever
-having to look at its code. This is very important. This makes it possible for
-you to separate your module's documented interface from its internal
-implementation (guts). This is good because it means that you are free to
-change the module's internals as long as the interface remains the same.
 
-> Remember: the documentation, not the code, defines what a module does.
+## User Story 
+* The owner of the repair shop "User"
+1. Register in the system as a user
+2. The user have the ability to add Customer
+3. For every customer abile to add cars
+4. For every car can have one Work Order on the same time.
 
-<!-- ~ [Ken Williams, Perl Hackers](http://mathforum.org/ken/perl_modules.html#document) -->
 
-Writing READMEs is way too hard, and keeping them maintained is difficult. By offloading this process - making writing easier, making editing easier, making it clear whether or not an edit is up to spec or not - you can spend less time worry about whether or not your initial documentation is good, and spend more time writing and using code.
+## Entity Relationship Diagram
 
-As well, standardizing can help elsewhere. By having a standard, users can spend less time searching for the information they want. They can also build tools to gather search terms from descriptions, to automatically run example code, to check licensing, and so on.
+![ERd](./erd1.png)
 
-The goals for this repository are:
 
-1. A well defined **specification**. This can be found in the [Spec document](spec.md). It is a constant work in progress; please open issues to discuss changes.
-2. **An example README**. This Readme is fully standard-readme compliant, and there are more examples in the `example-readmes` folder.
-<!-- 3. A **linter** that can be used to look at errors in a given Readme. Please refer to the [tracking issue](https://github.com/RichardLitt/standard-readme/issues/5). -->
-<!-- 4. A **generator** that can be used to quickly scaffold out new READMEs. See [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme). -->
-5. A **compliant badge** for users. See [the badge](#badge).
+## Wireframe
 
-## Install
 
-This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go check them out if you don't have them locally installed.
+## Technology
+ 
+* [npm](https://www.npmjs.com/package/download).
+* [Node js](https://nodejs.org/en/download/).
+* [React js](https://react-cn.github.io/react/downloads.html).
+* [Express js ](https://expressjs.com/en/starter/installing.html).
+* [VScode](https://code.visualstudio.com/download).
+* [Postman](https://www.getpostman.com/downloads/).
+* [Adobe Photoshop and illustrator](https://www.adobe.com/downloads.html).
+* [figma](https://www.figma.com/downloads/).
+* Template 
 
-```sh
-$ npm install --global standard-readme-spec
+We use this template for authentication
+```  
+express:  https://github.com/sei-relativity/express-api-template
+react: https://github.com/sei-relativity/react-template
 ```
 
-## Usage
-
-This is only a documentation package. You can print out [spec.md](spec.md) to your console:
-
-```sh
-$ standard-readme-spec
-# Prints out the standard-readme spec
-```
-
-### Generator
-
-<!-- To use the generator, look at [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme). There is a global executable to run the generator in that package, aliased as `standard-readme`. -->
 
 
-## Example Readmes
+## Further Study
 
-<!-- To see how the specification has been applied, see the [example-readmes](example-readmes/). -->
+* Improve the work order to make it incloude enouph deitals.
+* Make the system print out the bill to the customer after the work order done.
+* Make the customer tracking his work order
+* 
 
-## Related Efforts
+## Team Member
 
-<!-- - [Art of Readme](https://github.com/noffle/art-of-readme) - 💌 Learn the art of writing quality READMEs.
-- [open-source-template](https://github.com/davidbgk/open-source-template/) - A README template to encourage open-source contributions. -->
-
-## Maintainers
-
-<!-- [@RichardLitt](https://github.com/RichardLitt). -->
-
-## Contributing
-
-<!-- Feel free to dive in! [Open an issue](https://github.com/RichardLitt/standard-readme/issues/new) or submit PRs. -->
-
-<!-- Standard Readme follows the [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) Code of Conduct. -->
-
-### Contributors
-
-This project exists thanks to all the people who contribute. 
-<!-- <a href="graphs/contributors"><img src="https://opencollective.com/standard-readme/contributors.svg?width=890&button=false" /></a> -->
-
-
-## License
-
-<!-- [MIT](LICENSE) © Richard Littauer -->
+* [@MuhannadCY](https://github.com/MuhannadCY).
+* [@Abdulrhman-J](https://github.com/Abdulrhman-J).
+* [@wahhab1404](https://github.com/wahhab1404).

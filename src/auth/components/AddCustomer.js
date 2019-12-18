@@ -39,7 +39,8 @@ class AddCustomer extends Component{
     render(){
         const {customerName,phoneNumber,email,numberOfCars} = this.state
         return(
-            <form className='auth-form' onSubmit={this.onAddCustomer}>
+            <div className="auth-form-add-car">
+            <form className='auth-form1' onSubmit={this.onAddCustomer}>
                 <h3>Add Customer</h3>
 
                 <label htmlFor="oldpw">Customer Name</label>
@@ -71,6 +72,7 @@ class AddCustomer extends Component{
                 />
                 <button type="submit">Add Customer</button>
             </form>
+            </div>
         )
     }
 }

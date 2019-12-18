@@ -51,7 +51,8 @@ class UpdateCustomer extends Component{
     render(){
         const {customerName,phoneNumber,email,numberOfCars} = this.state
         return(
-            <form className='auth-form' onSubmit={this.onUpdateCustomer}>
+            <div className="auth-form-add-car">
+            <form className='auth-form1' onSubmit={this.onUpdateCustomer}>
                 <h3>Update Customer</h3>
 
                 <label htmlFor="oldpw">Customer Name</label>
@@ -81,8 +82,9 @@ class UpdateCustomer extends Component{
                 placeholder="Email"
                 onChange={this.handleChange}
                 />
-                <button type="submit">Add Customer</button>
+                <button type="submit">Update Customer</button>
             </form>
+            </div>
         )
     }
 }

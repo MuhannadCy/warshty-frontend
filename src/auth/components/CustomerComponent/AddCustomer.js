@@ -31,6 +31,7 @@ class AddCustomer extends Component{
         })
         .then(()=> history.push('/'))
         .catch(error => {
+            console.log(user)
             console.log(error)
             this.setState({customerName: '',phoneNumber: '', email: '',})
             alert('didn\'t work')

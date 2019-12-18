@@ -168,3 +168,54 @@ export const deleteCustomerByID = (id, user) => {
     }
   })
 }
+
+
+//////*****Work Order *****//////
+// get all Work Orders
+export const showWorkOrders = (user) => {
+  return axios({
+    url: apiUrl + '/api/workorder',
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
+  })
+}
+//Show WorkOrder By Car
+export const showCarWorkOrder = (user, id) => {
+  return axios({
+    url: apiUrl + `/api/workorder/${id}`,
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
+  })
+}
+
+// Delete Work By ID
+export const deleteWorkOrderByID = (id, user) => {
+  return axios({
+    url: apiUrl + `/api/workorder/${id}`,
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
+  })
+}
+//Add work Order
+export const addWorkOrder = (workOrder, user) => {
+  return axios({
+    url: apiUrl + '/api/workOrder',
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    },
+    data: {
+      workOrder: {
+        mechanic: workOrder.mechanic,
+        description: workOrder.description,
+        cost: workOrder.cost,
+      }
+    }
+  })
+}

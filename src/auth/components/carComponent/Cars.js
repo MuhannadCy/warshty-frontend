@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter, Link, Redirect } from 'react-router-dom'
 import { addCar, showCars, deleteCarByID } from '../../api'
 import messages from "../../messages";
 import ShowCar from "./ShowCar";
@@ -15,7 +15,6 @@ class Cars extends Component {
             })
     }
     deleteCar = (id) => {
-        console.log(id)
         deleteCarByID(id, this.props.user)
             .then((res) => {
                 const newCarList = this.props.cars.filter((car) => {
@@ -27,11 +26,18 @@ class Cars extends Component {
                 console.log(error);
             });
     }
-    render() {
+    re
+    addWorkOrderToCar(ID){
+        return <Redirect to={{
+            pathname: '/add-workorder',
+            state: { id: ID}
+            }}
+        />
+    }nder() {
         let allCars = <h2>No Cars</h2>
         if (this.props.cars.length > 0) {
             allCars = this.props.cars.map((car, index) => {
-                return <ShowCar name={car.VIN} key={index} deleteCar={this.deleteCar} id={car._id} />
+                return <ShowCar user={this.props.user} name={car.VIN} key={index} deleteCar={this.deleteCar} id={car._id} setWorkOrderList={this.props.setWorkOrderList}/>
             })
         }
         return (

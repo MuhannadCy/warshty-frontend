@@ -7,13 +7,15 @@ import SignUp from "./auth/components/SignUp";
 import SignIn from "./auth/components/SignIn";
 import SignOut from "./auth/components/SignOut";
 import ChangePassword from "./auth/components/ChangePassword";
-import AddCustomer from "./auth/components/AddCustomer";
+import AddCustomer from "./auth/components/CustomerComponent/AddCustomer";
 import AlertDismissible from "./auth/components/AlertDismissible";
-import Customers from "./auth/components/Customers";
-import Cars from "./auth/components/carComponent/Cars";
-import AddCar from "./auth/components/carComponent/AddCar";
+import Customers from "./auth/components/CustomerComponent/Customers";
+import Cars from "./auth/components/CarComponent/Cars";
+import AddCar from "./auth/components/CarComponent/AddCar";
 import LandingPage from "./LandingPage";
-import UpdateCustomer from "./auth/components/UpdateCustomer";
+import UpdateCustomer from "./auth/components/CustomerComponent/UpdateCustomer";
+import WorkOrders from "./auth/components/WordOrderComponent/WorkOrders";
+import AddWorkOrder from "./auth/components/WordOrderComponent/AddWorkOrder";
 
 class App extends Component {
   constructor() {
@@ -25,7 +27,8 @@ class App extends Component {
       showSingUp: false,
       showSignIn: false,
       customersList: [],
-      carsList: []
+      carsList: [],
+      workOrdersList: []
     };
   }
 
@@ -36,6 +39,9 @@ class App extends Component {
   };
   setCustomerList = customers => {
     this.setState({ customersList: customers });
+  };
+  setWorkOrderList = workOrders => {
+    this.setState({ workOrdersList: workOrders });
   };
   clearUser = () => this.setState({ user: null });
 
@@ -137,6 +143,18 @@ class App extends Component {
               />
             )}
           />
+          <AuthenticatedRoute
+            user={user}
+            path="/add-workorder"
+            render={() => (
+              <AddWorkOrder
+                alert={this.alert}
+                user={user}
+                workOrders={this.state.workOrdersList}
+                setWorkOrderList={this.setWorkOrderList}
+              />
+            )}
+          />
           </Switch>
         </main>
         <div>
@@ -161,6 +179,15 @@ class App extends Component {
                         user={user}
                         cars={this.state.carsList}
                         setCarList={this.setCarList}
+                        workOrders={this.state.wrokOrdersList}
+                        setWorkOrderList={this.setWorkOrderList}
+                      />
+                    </div>
+                    <div>
+                    <WorkOrders
+                        user={user}
+                        workOrders={this.state.wrokOrdersList}
+                        setWorkOrderList={this.setWorkOrderList}
                       />
                     </div>
                   </React.Fragment>

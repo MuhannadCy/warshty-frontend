@@ -34,7 +34,7 @@ The system will help the shop to orgnaize the all work order inside his shop to 
 
 ## Entity Relationship Diagram
 
-![ERd](../erd1.png)
+![ERd](./erd1.png)
 
 
 ## Wireframe

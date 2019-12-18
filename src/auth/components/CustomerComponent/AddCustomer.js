@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { addCustomer } from '../../api'
 import messages from "../../messages";
 
@@ -35,6 +35,9 @@ class AddCustomer extends Component{
             this.setState({customerName: '',phoneNumber: '', email: '',})
             alert('didn\'t work')
         })
+    }
+    cancleAdd(){
+        this.props.history.push('/')
     }
     render(){
         const {customerName,phoneNumber,email,numberOfCars} = this.state
@@ -72,6 +75,8 @@ class AddCustomer extends Component{
                 />
                 <button type="submit">Add Customer</button>
             </form>
+            {/* <Link to="/">Cancle</Link> */}
+            <button onClick = {()=>{this.cancleAdd()}}>Cancle</button>
             </div>
         )
     }

@@ -48,6 +48,9 @@ class UpdateCustomer extends Component{
             alert('didn\'t work')
         })
     }
+    cancleAdd(){
+        this.props.history.push('/')
+    }
     render(){
         const {customerName,phoneNumber,email,numberOfCars} = this.state
         return(
@@ -84,6 +87,7 @@ class UpdateCustomer extends Component{
                 />
                 <button type="submit">Update Customer</button>
             </form>
+            <button onClick = {()=>{this.cancleAdd()}}>Cancle</button>
             </div>
         )
     }

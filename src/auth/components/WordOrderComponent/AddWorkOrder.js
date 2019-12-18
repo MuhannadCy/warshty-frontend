@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Redirect } from 'react-router-dom'
+import { withRouter, Redirect, Link } from 'react-router-dom'
 import {addWorkOrder} from '../../api'
 
 
@@ -35,6 +35,9 @@ class AddWorkOrder extends Component {
             alert('didn\'t work')
         })
     
+    }
+    cancleAdd(){
+        this.props.history.push('/')
     }
     render() {
         const { mechanic, description, cost} = this.state
@@ -72,6 +75,7 @@ class AddWorkOrder extends Component {
                 />
                 <button type="submit">Add Work Order To Car</button>
             </form>
+            <button onClick = {()=>{this.cancleAdd()}}>Cancle</button>
             </div>
         )
     }

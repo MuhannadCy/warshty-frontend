@@ -44,7 +44,7 @@ class ShowCustomer extends Component {
     let displayAddCarLink = ''
     if(this.state.showAddCustomer == true) displayAddCarLink = (<div>
     <button onClick= {()=>{this.displayAddCarLink1(id, user)}}>Add Car</button>,
-    <button onClick= {()=>{this.displayUpdateCarLink()}}>Update Car</button>
+    <button onClick= {()=>{this.displayUpdateCarLink()}}>Update Customer</button>
     </div>)
       return (
         <div className="customer" onClick={this.showCars}>

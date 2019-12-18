@@ -81,10 +81,14 @@ box-shadow: 13px 4px 28px -9px rgba(0,0,0,0.75);
     max-width: 200px;
     background-color:  #f88300;
     color: ivory;
+    border: none;
   }
 
 h3 {
   text-align: center;
+}
+h6{
+  font-size: 14px;
 }
 .logo-small{
   margin-top: 1%;
@@ -98,7 +102,7 @@ h3 {
   display: flex;
   text-align: center;
   justify-content: center;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   
   // width: 90%;
 }
@@ -113,10 +117,18 @@ h3 {
 .cars-container {
   color: #fff;
   background-color: rgba($color: #000, $alpha: 0.7);
-  width: 40%;
+  width: 24%;
   min-height: 75vh;
-  margin: 2rem;
+  margin: 1rem;
   border-radius: 10px;
+}
+.work-container{
+  color: #fff;
+  background-color: rgba($color: #000, $alpha: 0.7);
+  width: 24%;
+  min-height: 75vh;
+  margin: 1rem;
+  border-radius: 10px; 
 }
 .car{
   display: flex;
@@ -124,8 +136,12 @@ h3 {
   justify-content: space-around;
 
 }
-.customer {
+.customer{
   display: flex;
   justify-content: space-between;
   padding: 5%;
+  border-bottom: 1px solid #fff;
+}
+.customer:active{
+  background-color: white;
 }

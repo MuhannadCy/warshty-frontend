@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { withRouter, Link, Redirect } from 'react-router-dom'
-import { addCustomer, showAllCustomers, deleteCustomerByID } from '../api'
-import messages from "../messages";
+import { addCustomer, showAllCustomers, deleteCustomerByID } from '../../api'
+import messages from "../../messages";
 import ShowCustomer from "./ShowCustomer";
-import AddCar from "./carComponent/AddCar";
+//import AddCar from "../CarComponent/AddCar";
 class Customers extends Component {
     
     componentDidMount() {

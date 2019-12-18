@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom'
-import { addCustomer } from '../api'
-import messages from "../messages";
+import { addCustomer } from '../../api'
+import messages from "../../messages";
 
 
 

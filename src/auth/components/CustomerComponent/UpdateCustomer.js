@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom'
-import { updateCustomer } from '../api'
-import messages from "../messages";
+import { updateCustomer } from '../../api'
+import messages from "../../messages";
 
 
 
@@ -33,12 +33,12 @@ class UpdateCustomer extends Component{
         event.preventDefault()
         const {alert, history, user} = this.props
         let updatedCustomer = this.state
-        let oldCustomer
+        let oldCustomerIndex
         //API Create Methods Here
         updateCustomer(this.state, user, this.props.location.state.id)
         .then(()=>{
-            alert(messages.addCustomerSuccess)
-            oldCustomer = this.props.customers.find( ({ shop }) => shop === this.props.location.state.id )
+            oldCustomerIndex = this.props.customers.findIndex(customer => customer._id == this.props.location.state.id) 
+            this.props.customers[oldCustomerIndex] = updatedCustomer
             this.props.setCustomerList(this.props.customers);
         })
         .then(()=> history.push('/'))

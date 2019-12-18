@@ -21,8 +21,13 @@ class App extends Component {
   constructor() {
     super();
 
+    let localUser = null;
+    if(localStorage.getItem('user')){
+      localUser = JSON.parse(localStorage.getItem('user'));
+    }
+
     this.state = {
-      user: null,
+      user: localUser,
       alerts: [],
       showSingUp: false,
       showSignIn: false,
@@ -31,9 +36,10 @@ class App extends Component {
       workOrdersList: []
     };
   }
-
-  setUser = user => this.setState({ user });
-
+  setUser = user => {
+    localStorage.setItem('user', JSON.stringify(user))
+    this.setState({ user });
+  }
   setCarList = cars => {
     this.setState({ carsList: cars });
   };
@@ -43,8 +49,10 @@ class App extends Component {
   setWorkOrderList = workOrders => {
     this.setState({ workOrdersList: workOrders });
   };
-  clearUser = () => this.setState({ user: null });
-
+  clearUser = () =>{
+   localStorage.clear()
+   this.setState({ user: null });
+  }
   alert = (message, type) => {
     this.setState({ alerts: [...this.state.alerts, { message, type }] });
   };

@@ -57,7 +57,8 @@ class ShowCustomer extends Component {
               id: this.props.id,
               customerName: this.props.customerName, 
               email: this.props.email,
-              phoneNumber: this.props.phoneNumber
+              phoneNumber: this.props.phoneNumber,
+              
             } 
             }}
         />}

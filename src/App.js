@@ -179,14 +179,14 @@ class App extends Component {
                         user={user}
                         cars={this.state.carsList}
                         setCarList={this.setCarList}
-                        workOrders={this.state.wrokOrdersList}
+                        workOrders={this.state.workOrdersList}
                         setWorkOrderList={this.setWorkOrderList}
                       />
                     </div>
                     <div>
                     <WorkOrders
                         user={user}
-                        workOrders={this.state.wrokOrdersList}
+                        workOrders={this.state.workOrdersList}
                         setWorkOrderList={this.setWorkOrderList}
                       />
                     </div>

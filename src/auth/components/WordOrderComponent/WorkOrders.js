@@ -28,7 +28,7 @@ class WorkOrders extends Component {
     }
     render(){
         let allWorkOrders = <h2>No Work Orders</h2>
-        if(this.props.workOrders.length > 0){
+        if(this.props.workOrders && this.props.workOrders.length > 0){
             allWorkOrders = this.props.workOrders.map((workOrder, index) => {
                 return <ShowWorkOrders mechanic={workOrder.mechanic} key={index} deleteWorkOrder={this.deleteWorkOrder} id={workOrder._id} />
             })

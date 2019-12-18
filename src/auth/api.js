@@ -203,9 +203,9 @@ export const deleteWorkOrderByID = (id, user) => {
   })
 }
 //Add work Order
-export const addWorkOrder = (workOrder, user) => {
+export const addWorkOrder = (user, workOrder, id) => {
   return axios({
-    url: apiUrl + '/api/workOrder',
+    url: apiUrl + `/api/workOrder/${id}`,
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${user.token}`

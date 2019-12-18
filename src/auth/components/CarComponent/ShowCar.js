@@ -38,7 +38,7 @@ class ShowCar extends Component {
     const id = this.props.id
     let displayAddWorkOrderLink  = ''
     if(this.state.showAddWorkOrder == true) displayAddWorkOrderLink = <div>
-      <button onClick={()=>displayAddWorkOrderLink()}>Add Work Order</button>
+      <button onClick={()=>this.displayAddWorkOrderLink()}>Add Work Order</button>
     </div>
     return (
       <div className="car">

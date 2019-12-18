@@ -1,17 +1,19 @@
 import React, { Component } from "react";
-import { withRouter, Link, Redirect } from 'react-router-dom'
-import { addCar, showCars, deleteCarByID } from '../../api'
+import { withRouter, Link, Redirect } from 'react-router-dom';
+import { addCar, showCars, deleteCarByID } from '../../api';
 import messages from "../../messages";
 import ShowCar from "./ShowCar";
 
-class Cars extends Component {
+class Cars extends React.Component {
     componentDidMount() {
+        console.log('munt up')
         showCars(this.props.user)
             .then((res) => {
+                console.log('what doooooo')
                 this.props.setCarList(res.data.cars)
             })
             .catch((err) => {
-                console.log(err)
+                console.error('WE GOT ERROR YO!', err)
             })
     }
     deleteCar = (id) => {
@@ -26,14 +28,15 @@ class Cars extends Component {
                 console.log(error);
             });
     }
-    re
     addWorkOrderToCar(ID){
         return <Redirect to={{
             pathname: '/add-workorder',
             state: { id: ID}
             }}
         />
-    }nder() {
+    }
+    render() {
+        //return <h1>Go To Hell!!! And back again!</h1>;
         let allCars = <h2>No Cars</h2>
         if (this.props.cars.length > 0) {
             allCars = this.props.cars.map((car, index) => {
@@ -42,7 +45,7 @@ class Cars extends Component {
         }
         return (
             <div>
-                {allCars}
+                 {allCars}
             </div>
         )
     }

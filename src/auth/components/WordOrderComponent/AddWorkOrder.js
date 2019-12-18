@@ -21,6 +21,7 @@ class AddWorkOrder extends Component {
 
         const { alert, history, user } = this.props
         //API Create Methods Here
+        
         addWorkOrder(user, this.state, this.props.location.state.id)
         .then(()=>{
             this.props.workOrders.push(this.state)
@@ -33,6 +34,7 @@ class AddWorkOrder extends Component {
             this.setState({mechanic: '',description: '',cost: ''})
             alert('didn\'t work')
         })
+    
     }
     render() {
         const { mechanic, description, cost} = this.state

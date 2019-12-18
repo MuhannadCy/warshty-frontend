@@ -35,7 +35,41 @@ $charcoal: #ccc;
   justify-content: center;
   margin: 15% auto 0;
   max-width: 600px;
-
+}
+.auth-form1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 6%;
+  max-width: 600px;
+}
+.auth-form-add-car {
+  position: absolute;
+  display: flex;
+  background-color:rgba(255, 255, 255, 0.9);
+  right: 25%;
+  top:0.5%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10% auto 0;
+  max-width: 600px;
+  width: 60vw;
+  height: 90%;
+  border: black solid 2px;
+  -webkit-box-shadow: 13px 4px 28px -9px rgba(0,0,0,0.75);
+-moz-box-shadow: 13px 4px 28px -9px rgba(0,0,0,0.75);
+box-shadow: 13px 4px 28px -9px rgba(0,0,0,0.75);
+}
+// .add-car {
+//   position: absolute;
+//   box-shadow: black;
+//   background-color: cornsilk;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   margin: 15% auto 0;
+//   max-width: 600px;
+// }
   h3,
   input {
     margin-bottom: 5%;
@@ -47,12 +81,12 @@ $charcoal: #ccc;
     background-color:  #f88300;
     color: ivory;
   }
-}
+
 h3 {
   text-align: center;
 }
 .logo-small{
-  margin-top: 7%;
+  margin-top: 1%;
 }
 .Pool {
   text-align: center;

@@ -38,7 +38,8 @@ class AddCar extends Component {
     render() {
         const { VIN, carPlate, color, year, model } = this.state
         return (
-            <form className='auth-form' onSubmit={this.onAddCar}>
+            <div className="auth-form-add-car">
+            <form className='auth-form1' onSubmit={this.onAddCar}>
                 <h3>Add Car</h3>
 
                 <label htmlFor="oldpw">VIN number</label>
@@ -89,6 +90,7 @@ class AddCar extends Component {
                 {/* <button type="submit">Add Car To Customer ${CustomElementRegistry.name}</button> */}
                 <button type="submit">Add Car To Customer</button>
             </form>
+            </div>
         )
     }
 }

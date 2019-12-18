@@ -7,7 +7,6 @@ import messages from '../messages'
 class SignOut extends Component {
   componentDidMount () {
     const { alert, history, clearUser, user } = this.props
-
     signOut(user)
       .finally(() => alert(messages.signOutSuccess, 'success'))
       .finally(() => history.push('/'))

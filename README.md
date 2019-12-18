@@ -1,4 +1,4 @@
-![logo](./src/Assets/images/warshaty2.png)
+![logo](./src/Assets/Images/warshaty2.png)
 
 # Repair Shop Management 
 
@@ -40,6 +40,14 @@ The system will help the shop to orgnaize the all work order inside his shop to 
 
 
 ## Wireframe
+
+![sgin-in](./wireframe/pic2.png)
+![sgin-up](./wireframe/pic3.png)
+![home page](./wireframe/homePage.png)
+![Add customer](./wireframe/pic4.png)
+![Add car](./wireframe/pic5.png)
+![Open work order](./wireframe/pic6.png)
+
 
 
 ## Technology

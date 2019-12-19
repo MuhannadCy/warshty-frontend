@@ -79,6 +79,6 @@ react: https://github.com/sei-relativity/react-template
 
 ## Team Member
 
-* [@MuhannadCY](https://github.com/MuhannadCY).
+* [@MuhannadCy](https://github.com/MuhannadCy).
 * [@Abdulrhman-J](https://github.com/Abdulrhman-J).
 * [@wahhab1404](https://github.com/wahhab1404).

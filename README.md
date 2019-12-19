@@ -17,7 +17,7 @@ The project has many useful outcomes when the project use by a huge number of re
 - [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Wireframe](#wireframe)
 - [Technology](#technology)
-- [Further Study](#further-study)
+- [Future Plans](#future-plans)
 - [Team Member](#team-member)
 
 ## Background
@@ -70,7 +70,7 @@ react: https://github.com/sei-relativity/react-template
 
 
 
-## Further Study
+## Future Plans
 
 * Improve the work order to make it incloude enouph deitals.
 * Make the system print out the bill to the customer after the work order done.

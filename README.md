@@ -36,10 +36,18 @@ The system will help the shop to orgnaize the all work order inside his shop to 
 
 ## Entity Relationship Diagram
 
-![ERd](./erd1.png)
+![ERd](./aasd.png)
 
 
 ## Wireframe
+
+![sgin-in](./wireframe/pic2.png)
+![sgin-up](./wireframe/pic3.png)
+![home page](./wireframe/homePage.png)
+![Add customer](./wireframe/pic4.png)
+![Add car](./wireframe/pic5.png)
+![Open work order](./wireframe/pic6.png)
+
 
 
 ## Technology

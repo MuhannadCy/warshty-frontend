@@ -92,10 +92,11 @@ class AddCar extends Component {
                     onChange={this.handleChange}
                 />
                 {/* <button type="submit">Add Car To Customer ${CustomElementRegistry.name}</button> */}
-                <button type="submit">Add Car To Customer</button>
-                
+                <div className="btns">
+                <button className="button1" type="submit">Add Car To Customer</button>
+                <button className="button1" onClick = {()=>{this.cancleAdd()}}>Cancle</button>
+                </div>
             </form>
-            <button onClick = {()=>{this.cancleAdd()}}>Cancle</button>
             </div>
         )
     }

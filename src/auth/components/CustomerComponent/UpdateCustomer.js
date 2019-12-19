@@ -85,9 +85,12 @@ class UpdateCustomer extends Component{
                 placeholder="Email"
                 onChange={this.handleChange}
                 />
-                <button type="submit">Update Customer</button>
+                <div className="btns">
+                <button className="button1" type="submit">Update Customer</button>
+                <button  className="button1" onClick = {()=>{this.cancleAdd()}}>Cancle</button>
+                </div>
             </form>
-            <button onClick = {()=>{this.cancleAdd()}}>Cancle</button>
+            
             </div>
         )
     }

@@ -51,7 +51,7 @@ class ShowCar extends Component {
       );
     return (
       <div className="car">
-        <h3 onClick={this.showWorkOrder}>{this.props.carPlate}</h3>
+  <h3 onClick={this.showWorkOrder}>{this.props.carPlate} {this.props.carModel} {this.props.carYear}</h3>
         <a href="#" onClick={this.deleteCar}>
           Delete
         </a>

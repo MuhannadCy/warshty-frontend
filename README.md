@@ -75,7 +75,7 @@ react: https://github.com/sei-relativity/react-template
 * Improve the work order to make it incloude enouph deitals.
 * Make the system print out the bill to the customer after the work order done.
 * Make the customer tracking his work order
-* 
+
 
 ## Team Member
 

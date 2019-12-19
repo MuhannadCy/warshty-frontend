@@ -5,8 +5,8 @@ import messages from "../../messages";
 
 
 
-class AddCustomer extends Component{
-    constructor(){
+class AddCustomer extends Component {
+    constructor() {
         super()
         this.state = {
             customerName: '',
@@ -19,32 +19,33 @@ class AddCustomer extends Component{
     handleChange = event => this.setState({
         [event.target.name]: event.target.value
     })
-    onAddCustomer = event =>{
+    onAddCustomer = event => {
         event.preventDefault()
-        const {alert, history, user} = this.props
+        const { alert, history, user } = this.props
         //API Create Methods Here
         addCustomer(this.state, user)
-        .then(()=>{
-            alert(messages.addCustomerSuccess)
-            this.props.customers.push(this.state)
-            this.props.setCustomerList(this.props.customers);
-        })
-        .then(()=> history.push('/'))
-        .catch(error => {
-            console.log(error)
-            this.setState({customerName: '',phoneNumber: '', email: '',})
-            alert('didn\'t work')
-        })
+            .then(() => {
+                alert(messages.addCustomerSuccess)
+                this.props.customers.push(this.state)
+                this.props.setCustomerList(this.props.customers);
+            })
+            .then(() => history.push('/'))
+            .catch(error => {
+                console.log(user)
+                console.log(error)
+                this.setState({ customerName: '', phoneNumber: '', email: '', })
+                alert('didn\'t work')
+            })
     }
-    cancleAdd(){
+    cancleAdd() {
         this.props.history.push('/')
     }
-    render(){
-        const {customerName,phoneNumber,email,numberOfCars} = this.state
-        return(
+    render() {
+        const { customerName, phoneNumber, email, numberOfCars } = this.state
+        return (
             <div className="auth-form-add-car">
-            <form className='auth-form1' onSubmit={this.onAddCustomer}>
-                <h3>Add Customer</h3>
+                <form className='auth-form1' onSubmit={this.onAddCustomer}>
+                    <h3>Add Customer</h3>
 
                 <label htmlFor="oldpw">Customer Name</label>
                 <input
@@ -78,8 +79,6 @@ class AddCustomer extends Component{
             <button className="button1" onClick = {()=>{this.cancleAdd()}}>Cancle</button>
             </div>
             </form>
-            {/* <Link to="/">Cancle</Link> */}
-            
             </div>
         )
     }

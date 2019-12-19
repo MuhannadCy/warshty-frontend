@@ -76,13 +76,13 @@ class App extends Component {
       <React.Fragment>
         
         <Header user={user} />
-        {alerts.map((alert, index) => (
+        {/* {alerts.map((alert, index) => (
           <AlertDismissible
             key={index}
             variant={alert.type}
             message={alert.message}
           />
-        ))}
+        ))} */}
         <main className="container">
           <Switch>
           <Route

@@ -137,7 +137,7 @@ export const addCustomer = (customer, user) => {
 export const updateCustomer = (customer, user, id) => {
   return axios({
     url: apiUrl + `/api/customer/${id}`,
-    method: 'PATCH',
+    method: 'PUT',
     headers: {
       'Authorization': `Bearer ${user.token}`
     },

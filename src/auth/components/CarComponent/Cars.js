@@ -6,7 +6,6 @@ import ShowCar from "./ShowCar";
 
 class Cars extends React.Component {
     componentDidMount() {
-        console.log('munt up')
         showCars(this.props.user)
             .then((res) => {
                 console.log('what doooooo')

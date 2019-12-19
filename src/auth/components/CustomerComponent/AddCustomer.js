@@ -47,37 +47,38 @@ class AddCustomer extends Component {
                 <form className='auth-form1' onSubmit={this.onAddCustomer}>
                     <h3>Add Customer</h3>
 
-                    <label htmlFor="oldpw">Customer Name</label>
-                    <input
-                        required
-                        name="customerName"
-                        value={customerName}
-                        type="text"
-                        placeholder="Customer Name"
-                        onChange={this.handleChange}
-                    />
-                    <label htmlFor="phoneNumber">Phone Number</label>
-                    <input
-                        required
-                        name="phoneNumber"
-                        value={phoneNumber}
-                        type="text"
-                        placeholder="i.g: +966551231234, 0551231234"
-                        onChange={this.handleChange}
-                    />
-                    <label htmlFor="phoneNumber">Email</label>
-                    <input
-                        required
-                        name="email"
-                        value={email}
-                        type="email"
-                        placeholder="Email"
-                        onChange={this.handleChange}
-                    />
-                    <button type="submit">Add Customer</button>
-                </form>
-                {/* <Link to="/">Cancle</Link> */}
-                <button onClick={() => { this.cancleAdd() }}>Cancel</button>
+                <label htmlFor="oldpw">Customer Name</label>
+                <input
+                required
+                name="customerName"
+                value={customerName}
+                type="text"
+                placeholder="Customer Name"
+                onChange={this.handleChange}
+                />
+                <label htmlFor="phoneNumber">Phone Number</label>
+                <input
+                required
+                name="phoneNumber"
+                value={phoneNumber}
+                type="text"
+                placeholder="i.g: +966551231234, 0551231234"
+                onChange={this.handleChange}
+                />
+                <label htmlFor="phoneNumber">Email</label>
+                <input
+                required
+                name="email"
+                value={email}
+                type="email"
+                placeholder="Email"
+                onChange={this.handleChange}
+                />
+                <div className="btns">
+            <button className="button1" type="submit">Add Customer</button>
+            <button className="button1" onClick = {()=>{this.cancleAdd()}}>Cancle</button>
+            </div>
+            </form>
             </div>
         )
     }

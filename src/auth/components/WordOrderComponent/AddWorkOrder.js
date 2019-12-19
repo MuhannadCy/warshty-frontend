@@ -73,9 +73,11 @@ class AddWorkOrder extends Component {
                     placeholder="How much does this work cost in SAR"
                     onChange={this.handleChange}
                 />
-                <button type="submit">Add Work Order To Car</button>
+                <div className="btns">
+                <button className="button1" type="submit">Add Work Order To Car</button>
+                <button className="button1" onClick = {()=>{this.cancleAdd()}}>Cancle</button>
+                </div>
             </form>
-            <button onClick = {()=>{this.cancleAdd()}}>Cancle</button>
             </div>
         )
     }

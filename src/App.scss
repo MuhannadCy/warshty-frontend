@@ -83,7 +83,17 @@ box-shadow: 13px 4px 28px -9px rgba(0,0,0,0.75);
     color: ivory;
     border: none;
   }
-
+  .btns{
+    display: flex;
+  }
+  .button1{
+    margin: 1%;
+  }
+  .cancle-btn{
+    position: relative;
+    right: 30%;
+    bottom: 12%;
+  }
 h3 {
   text-align: center;
 }

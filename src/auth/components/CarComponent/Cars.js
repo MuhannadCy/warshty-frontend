@@ -39,7 +39,7 @@ class Cars extends React.Component {
         let allCars = <h2>No Cars</h2>
         if (this.props.cars.length > 0) {
             allCars = this.props.cars.map((car, index) => {
-                return <ShowCar carPlate={car.carPlat}user={this.props.user} name={car.VIN} key={index} deleteCar={this.deleteCar} id={car._id} setWorkOrderList={this.props.setWorkOrderList}/>
+                return <ShowCar carPlate={car.carPlat} carModel={car.carModel} carYear={car.carYear} user={this.props.user} name={car.VIN} key={index} deleteCar={this.deleteCar} id={car._id} setWorkOrderList={this.props.setWorkOrderList}/>
             })
         }
         return (

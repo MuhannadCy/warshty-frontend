@@ -202,7 +202,7 @@ class App extends Component {
                 </div>
               </div>
             )}
-          />}
+          />
         </div>
       </React.Fragment>
     );
